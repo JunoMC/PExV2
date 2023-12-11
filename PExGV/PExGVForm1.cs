@@ -29,26 +29,26 @@ namespace PExGV
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkNullBox(passTextBox) || checkNullBox(mssvTextBox))
+            if (checkNullBox(passTextBox) || checkNullBox(mgvTextBox))
             {
                 MessageBox.Show("Vui lòng kiểm tra lại các thông tin đã nhập.", "PEx - Có lỗi xảy ra!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            mssvTextBox.Enabled = false;
+            mgvTextBox.Enabled = false;
             passTextBox.Enabled = false;
 
             button1.Enabled = false;
             button1.BackColor = Color.Gray;
             button1.Text = "Đang đăng nhập...";
 
-            DataTable selectSinhVien = mysql.ExecuteQuery("SELECT * FROM `sinh_vien` WHERE `MaSinhVien` = '" + mssvTextBox.Text + "'");
+            DataTable selectGV = mysql.ExecuteQuery("SELECT * FROM `giang_vien` WHERE `MaGV` = '" + mgvTextBox.Text + "'");
 
             bool canLogin = false;
 
-            if (selectSinhVien.Rows.Count > 0)
+            if (selectGV.Rows.Count > 0)
             {
-                string encodedPass = selectSinhVien.Rows[0]["MatKhau"].ToString();
+                string encodedPass = selectGV.Rows[0]["MatKhau"].ToString();
 
                 Crypto crypto = new Crypto();
                 canLogin = crypto.Compare(passTextBox.Text, encodedPass);
@@ -57,7 +57,7 @@ namespace PExGV
             if (!canLogin)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác.", "PEx - Có lỗi xảy ra!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                mssvTextBox.Enabled = true;
+                mgvTextBox.Enabled = true;
                 passTextBox.Enabled = true;
 
                 button1.Enabled = true;
@@ -68,7 +68,7 @@ namespace PExGV
             {
                 //MessageBox.Show("Đăng nhập thành công.", "PEx - thông báo!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                //new PExForm2(selectSinhVien.Rows[0], mysql).ShowDialog();
+                new PExGVForm2(mysql).ShowDialog();
             }
 
             // Xử lý dữ liệu từ DataTable

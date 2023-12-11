@@ -33,11 +33,11 @@
             button1 = new Button();
             passTextBox = new TextBox();
             passGroupBox = new GroupBox();
-            mssvGroupBox = new GroupBox();
-            mssvTextBox = new TextBox();
+            mgvGroupBox = new GroupBox();
+            mgvTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)PExLogoBox).BeginInit();
             passGroupBox.SuspendLayout();
-            mssvGroupBox.SuspendLayout();
+            mgvGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // PExLogoBox
@@ -88,27 +88,27 @@
             passGroupBox.TabStop = false;
             passGroupBox.Text = "Mật khẩu (*)";
             // 
-            // mssvGroupBox
+            // mgvGroupBox
             // 
-            mssvGroupBox.Controls.Add(mssvTextBox);
-            mssvGroupBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            mssvGroupBox.Location = new Point(77, 182);
-            mssvGroupBox.Name = "mssvGroupBox";
-            mssvGroupBox.Size = new Size(292, 64);
-            mssvGroupBox.TabIndex = 3;
-            mssvGroupBox.TabStop = false;
-            mssvGroupBox.Text = "Mã giảng viên (*)";
+            mgvGroupBox.Controls.Add(mgvTextBox);
+            mgvGroupBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            mgvGroupBox.Location = new Point(77, 182);
+            mgvGroupBox.Name = "mgvGroupBox";
+            mgvGroupBox.Size = new Size(292, 64);
+            mgvGroupBox.TabIndex = 3;
+            mgvGroupBox.TabStop = false;
+            mgvGroupBox.Text = "Mã giảng viên (*)";
             // 
-            // mssvTextBox
+            // mgvTextBox
             // 
-            mssvTextBox.AllowDrop = true;
-            mssvTextBox.CharacterCasing = CharacterCasing.Upper;
-            mssvTextBox.Location = new Point(6, 28);
-            mssvTextBox.MaxLength = 50;
-            mssvTextBox.Name = "mssvTextBox";
-            mssvTextBox.Size = new Size(280, 29);
-            mssvTextBox.TabIndex = 0;
-            mssvTextBox.TextAlign = HorizontalAlignment.Center;
+            mgvTextBox.AllowDrop = true;
+            mgvTextBox.CharacterCasing = CharacterCasing.Upper;
+            mgvTextBox.Location = new Point(6, 28);
+            mgvTextBox.MaxLength = 50;
+            mgvTextBox.Name = "mgvTextBox";
+            mgvTextBox.Size = new Size(280, 29);
+            mgvTextBox.TabIndex = 0;
+            mgvTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // PExGVForm1
             // 
@@ -116,7 +116,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(444, 392);
             Controls.Add(passGroupBox);
-            Controls.Add(mssvGroupBox);
+            Controls.Add(mgvGroupBox);
             Controls.Add(button1);
             Controls.Add(PExLogoBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -129,8 +129,8 @@
             ((System.ComponentModel.ISupportInitialize)PExLogoBox).EndInit();
             passGroupBox.ResumeLayout(false);
             passGroupBox.PerformLayout();
-            mssvGroupBox.ResumeLayout(false);
-            mssvGroupBox.PerformLayout();
+            mgvGroupBox.ResumeLayout(false);
+            mgvGroupBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -139,7 +139,7 @@
         private Button button1;
         private TextBox passTextBox;
         private GroupBox passGroupBox;
-        private GroupBox mssvGroupBox;
-        private TextBox mssvTextBox;
+        private GroupBox mgvGroupBox;
+        private TextBox mgvTextBox;
     }
 }
